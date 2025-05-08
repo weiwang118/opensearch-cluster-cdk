@@ -41,6 +41,8 @@ nodeConfig.set('ml', {
 export enum x64Ec2InstanceType {
   M5_XLARGE = 'm5.xlarge',
   M5_2XLARGE = 'm5.2xlarge',
+  M6A_LARGE = 'm6a.large',
+  R6A_2XLARGE = 'r6a.2xlarge',
   C5_LARGE = 'c5.large',
   C5_XLARGE = 'c5.xlarge',
   C5_2XLARGE = 'c5.2xlarge',
@@ -103,6 +105,10 @@ export const getX64InstanceTypes = (instanceType: string): InstanceTypeInfo => {
     return { instance: InstanceType.of(InstanceClass.M5, InstanceSize.XLARGE), hasInternalStorage: false };
   case x64Ec2InstanceType.M5_2XLARGE:
     return { instance: InstanceType.of(InstanceClass.M5, InstanceSize.XLARGE2), hasInternalStorage: false };
+  case x64Ec2InstanceType.M6A_LARGE:
+    return { instance: InstanceType.of(InstanceClass.M6A, InstanceSize.LARGE), hasInternalStorage: false };
+  case x64Ec2InstanceType.R6A_2XLARGE:
+    return { instance: InstanceType.of(InstanceClass.R6A, InstanceSize.XLARGE2), hasInternalStorage: false };
   case x64Ec2InstanceType.C5_LARGE:
     return { instance: InstanceType.of(InstanceClass.C5, InstanceSize.LARGE), hasInternalStorage: false };
   case x64Ec2InstanceType.C5_XLARGE:
